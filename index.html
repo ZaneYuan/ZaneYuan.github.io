@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zane · 个人主页</title>
+<meta name="description" content="Zane — Dynamics 365 / Power Platform 软件工程师，独立游戏与工具开发者">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0d12'/%3E%3Ctext x='50' y='68' font-size='58' font-family='serif' fill='%23e8b86d' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="controls">
+  <button id="lang-toggle" aria-label="Switch language / 切换语言" title="Switch language / 切换语言">
+    <span class="lang-zh">中</span><span class="lang-sep">/</span><span class="lang-en">EN</span>
+  </button>
+  <button id="theme-toggle" aria-label="切换明暗主题" title="切换明暗主题">
+    <span class="icon-dark">☾</span>
+    <span class="icon-light">☀</span>
+  </button>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="avatar" aria-hidden="true">Z</div>
+    <h1>Zane</h1>
+    <p class="title" data-i18n="hero.title">软件工程师 <span class="dot">·</span> 独立开发者</p>
+    <p class="tagline" data-i18n="hero.tagline">写代码搭系统，也写代码造一家会自己开门的午夜怪物便利店。</p>
+    <div class="badges">
+      <span class="badge">Dynamics&nbsp;365</span>
+      <span class="badge">Power&nbsp;Platform</span>
+      <span class="badge">Azure</span>
+      <span class="badge">AI&nbsp;Agent</span>
+      <span class="badge">Indie&nbsp;Dev</span>
+    </div>
+    <div class="links">
+      <a href="https://github.com/ZaneYuan" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <span>github.com/ZaneYuan</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="block" id="about">
+    <h2><span class="num">01</span><span data-i18n="about.heading">关于我</span></h2>
+    <p data-i18n="about.body">六年多时间里，大部分工作是把复杂的企业系统一点点理顺——插件、中间层、云端集成，让数据在正确的地方安静地流动。持有 Microsoft Power Platform 全系认证（<span class="mono">PL-200 / PL-400 / PL-600</span>）与 Azure 认证（<span class="mono">AZ-104 / AZ-305</span>）。这两年开始用 Claude Code 搭建 AI Agent，把重复劳动交给自动化，把更多时间留给值得认真想的问题。</p>
+  </section>
+
+  <section class="block" id="focus">
+    <h2><span class="num">02</span><span data-i18n="focus.heading">目前方向</span></h2>
+    <ul class="focus-list">
+      <li data-i18n="focus.enterprise"><strong>企业侧</strong> — Dynamics 365 / Power Platform / Azure 架构设计与落地，探索 AI Agent 融入开发与交付流程</li>
+      <li data-i18n="focus.personal"><strong>个人侧</strong> — 独立游戏开发（Unity + C#）、开发者工具（.NET + React 桌面应用）</li>
+    </ul>
+  </section>
+
+  <section class="block" id="projects">
+    <h2><span class="num">03</span><span data-i18n="projects.heading">近期在做的事</span></h2>
+    <div class="project-grid">
+
+      <article class="project-card">
+        <h3>Power Apps Studio &amp; Tools</h3>
+        <p class="project-en">Open Source · Desktop Toolbox</p>
+        <p data-i18n="project2.desc">开源的 Power Apps / Dataverse / Dynamics 365 桌面工具箱，内置连接管理、Metadata Browser、SQL4CDS、Plugin Registration、Ribbon Workbench 等 14+ 个工具，仿 XrmToolBox 思路用 React + WPF + WebView2 重新打造。</p>
+        <div class="tags">
+          <span class="tag">.NET 10</span>
+          <span class="tag">React</span>
+          <span class="tag">WebView2</span>
+          <span class="tag">Open Source</span>
+        </div>
+        <a class="project-link" href="https://github.com/ZaneYuan/PowerApps-Studio-Tools" target="_blank" rel="noopener noreferrer" data-i18n="project2.link">查看仓库 →</a>
+      </article>
+
+      <article class="project-card">
+        <h3 data-i18n="project1.title">午夜怪物便利店</h3>
+        <p class="project-en">MidnightMonsterMart</p>
+        <p data-i18n="project1.desc">一款「白天远征、深夜营业」的经营 + 肉鸽游戏。全程序化生成，没有一个预制体。目前已有完整可玩的 PC 原型：排班、远征、闭店、日结，一晚一个完整的循环。</p>
+        <div class="tags">
+          <span class="tag">Unity 6</span>
+          <span class="tag">C#</span>
+          <span class="tag">Solo Dev</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3 data-i18n="project3.title">AI Agent 工作流</h3>
+        <p class="project-en">Agents · Skills · Plugins</p>
+        <p data-i18n="project3.desc">用 Claude Code 搭建面向 CRM 开发场景的 Agent、Skill 和插件，覆盖内容质检、文档生成、Agent 驱动的应用生成等场景。</p>
+        <div class="tags">
+          <span class="tag">Claude Code</span>
+          <span class="tag">Automation</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="block" id="hobbies">
+    <h2><span class="num">04</span><span data-i18n="hobbies.heading">爱好</span></h2>
+    <div class="tags hobby-tags">
+      <span class="tag" data-i18n="hobbies.tag1">🎤 唱歌 · 研究科学发声与唱法</span>
+      <span class="tag" data-i18n="hobbies.tag2">🇬🇧 英语学习</span>
+    </div>
+  </section>
+
+  <footer>
+    <p data-i18n="footer.text">© 2026 Zane · 用一行行代码，认真生活。</p>
+  </footer>
+
+</div>
+
+<script src="i18n.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

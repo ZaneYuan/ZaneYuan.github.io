@@ -13,6 +13,7 @@
       'projects.heading': '近期在做的事',
       'project1.title': '午夜怪物便利店',
       'project1.desc': '一款「白天远征、深夜营业」的经营 + 肉鸽游戏。全程序化生成，没有一个预制体。目前已有完整可玩的 PC 原型：排班、远征、闭店、日结，一晚一个完整的循环。',
+      'project1.link': '查看仓库 →',
       'project2.desc': '开源的 Power Apps / Dataverse / Dynamics 365 桌面工具箱，内置连接管理、Metadata Browser、SQL4CDS、Plugin Registration、Ribbon Workbench 等 14+ 个工具，仿 XrmToolBox 思路用 React + WPF + WebView2 重新打造。',
       'project2.link': '查看仓库 →',
       'project3.title': 'AI Agent 工作流',
@@ -20,6 +21,7 @@
       'hobbies.heading': '爱好',
       'hobbies.tag1': '🎤 唱歌 · 研究科学发声与唱法',
       'hobbies.tag2': '🇬🇧 英语学习',
+      'links.vocal': 'Vocal 练声工具',
       'footer.text': '© 2026 Zane · 用一行行代码，认真生活。'
     },
     en: {
@@ -35,6 +37,7 @@
       'projects.heading': 'Currently Building',
       'project1.title': 'Midnight Monster Store',
       'project1.desc': 'A management-sim + roguelite: expeditions by day, running a shop for monsters by night. Fully procedural — not a single prefab. A complete, playable PC prototype already exists: scheduling, expeditions, closing up, and the daily settlement — one full loop per night.',
+      'project1.link': 'View repo →',
       'project2.desc': 'An open-source desktop toolbox for Power Apps / Dataverse / Dynamics 365 — 14+ built-in tools including connection management, a metadata browser, SQL4CDS, Plugin Registration, and Ribbon Workbench, built in the spirit of XrmToolBox with React + WPF + WebView2.',
       'project2.link': 'View repo →',
       'project3.title': 'AI Agent Workflows',
@@ -42,6 +45,7 @@
       'hobbies.heading': 'Interests',
       'hobbies.tag1': '🎤 Singing · studying vocal technique',
       'hobbies.tag2': '🇬🇧 Learning English',
+      'links.vocal': 'Vocal Tool',
       'footer.text': '© 2026 Zane · Building a life, one line at a time.'
     }
   };

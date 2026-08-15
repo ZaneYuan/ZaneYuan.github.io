@@ -170,6 +170,13 @@ body {
   color: var(--ink-soft);
 }
 
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
 .links a {
   display: inline-flex;
   align-items: center;

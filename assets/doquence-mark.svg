@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Doquence">
+  <defs>
+    <linearGradient id="background" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8B4E8"/>
+      <stop offset="1" stop-color="#F28778"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="150" fill="url(#background)"/>
+  <path d="M108 166c53-21 101-8 148 40v189c-43-41-92-54-148-31V166Z" fill="none" stroke="#2D2032" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M404 166c-53-21-101-8-148 40v189c43-41 92-54 148-31V166Z" fill="none" stroke="#2D2032" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m166 232 43 17m137-17-43 17" fill="none" stroke="#2D2032" stroke-width="28" stroke-linecap="round"/>
+</svg>

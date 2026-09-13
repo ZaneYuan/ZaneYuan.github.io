@@ -2,12 +2,20 @@
   var root = document.documentElement;
   var toggle = document.getElementById('theme-toggle');
   var stored = localStorage.getItem('theme');
-  if (stored) root.setAttribute('data-theme', stored);
+
+  function applyTheme(theme) {
+    var isLight = theme === 'light';
+    root.setAttribute('data-theme', theme);
+    toggle.setAttribute('aria-pressed', String(isLight));
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', isLight ? '#f7f4f8' : '#0d0c12');
+  }
+
+  applyTheme(stored || 'dark');
 
   toggle.addEventListener('click', function () {
     var isLight = root.getAttribute('data-theme') === 'light';
     var next = isLight ? 'dark' : 'light';
-    root.setAttribute('data-theme', next);
+    applyTheme(next);
     localStorage.setItem('theme', next);
   });
 })();
@@ -20,8 +28,12 @@
   var w, h;
 
   function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
+    var pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    w = window.innerWidth;
+    h = window.innerHeight;
+    canvas.width = Math.round(w * pixelRatio);
+    canvas.height = Math.round(h * pixelRatio);
+    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
     var count = Math.min(70, Math.floor((w * h) / 22000));
     dots = [];
     for (var i = 0; i < count; i++) {

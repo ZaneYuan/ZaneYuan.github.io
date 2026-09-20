@@ -28,7 +28,7 @@
       'hobbies.heading': '爱好',
       'hobbies.tag1': '🎤 唱歌 · 研究科学发声与唱法',
       'hobbies.tag2': '🇬🇧 英语学习',
-      'links.vocal': 'Vocal 练声工具',
+      'links.tools': 'Power Apps Studio &amp; Tools',
       'links.doquence': '体验 Doquence',
       'footer.text': '© 2026 Zane · 用一行行代码，认真生活。'
     },
@@ -60,7 +60,7 @@
       'hobbies.heading': 'Interests',
       'hobbies.tag1': '🎤 Singing · studying vocal technique',
       'hobbies.tag2': '🇬🇧 Learning English',
-      'links.vocal': 'Vocal Tool',
+      'links.tools': 'Power Apps Studio &amp; Tools',
       'links.doquence': 'Explore Doquence',
       'footer.text': '© 2026 Zane · Building a life, one line at a time.'
     }

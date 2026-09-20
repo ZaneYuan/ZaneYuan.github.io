@@ -7,6 +7,9 @@
       'hero.eyebrow': 'BUILDING SYSTEMS · SHAPING PRODUCTS',
       'hero.title': '软件工程师 <span class="dot">·</span> 产品开发者',
       'hero.tagline': '把复杂系统做简单，也把零散学习变成一条走得下去的路。',
+      'contact.label': '联系我',
+      'like.label': '为这个主页点赞',
+      'like.liked': '已点赞，感谢你的支持',
       'about.heading': '关于我',
       'about.body': '六年多时间里，大部分工作是把复杂的企业系统一点点理顺——插件、中间层、云端集成，让数据在正确的地方安静地流动。持有 Microsoft Power Platform 全系认证（<span class="mono">PL-200 / PL-400 / PL-600</span>）与 Azure 认证（<span class="mono">AZ-104 / AZ-305</span>）。现在也把这些经验投入独立产品 Doquence：从学习体验、产品设计到全栈开发，把一个想法完整地做成可用的产品。',
       'focus.heading': '目前方向',
@@ -36,6 +39,9 @@
       'hero.eyebrow': 'BUILDING SYSTEMS · SHAPING PRODUCTS',
       'hero.title': 'Software Engineer <span class="dot">·</span> Product Builder',
       'hero.tagline': 'Turning complex systems into calm products—and scattered study into a path worth following.',
+      'contact.label': 'Contact me',
+      'like.label': 'Like this page',
+      'like.liked': 'Liked — thank you',
       'about.heading': 'About',
       'about.body': 'Over six-plus years, most of my work has been untangling complex enterprise systems — plugins, middleware, cloud integrations — so data quietly flows where it should. Certified across Microsoft Power Platform (<span class="mono">PL-200 / PL-400 / PL-600</span>) and Azure (<span class="mono">AZ-104 / AZ-305</span>). I now bring that experience to Doquence, an independent product I am shaping end to end — from the learning experience and product design to the full-stack implementation.',
       'focus.heading': 'Current Focus',
@@ -74,6 +80,7 @@
       var key = el.getAttribute('data-i18n');
       if (dict[key] !== undefined) el.innerHTML = dict[key];
     });
+    window.dispatchEvent(new CustomEvent('languagechange', { detail: { lang: lang, translations: dict } }));
   }
 
   var stored = localStorage.getItem('lang') || 'zh';

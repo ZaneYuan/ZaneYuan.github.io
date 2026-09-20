@@ -21,6 +21,87 @@
 })();
 
 (function () {
+  var button = document.getElementById('site-like');
+  var count = document.getElementById('like-count');
+  var storageKey = 'zane-site-liked';
+  var counterUrl = 'https://abacus.jasoncameron.dev';
+  var counterPath = '/zaneyuan-github-io/homepage-likes';
+  var liked = localStorage.getItem(storageKey) === 'true';
+  var pending = false;
+
+  function setLabel(translations) {
+    var key = liked ? 'like.liked' : 'like.label';
+    var isEnglish = document.documentElement.getAttribute('data-lang') === 'en';
+    var label = translations && translations[key]
+      ? translations[key]
+      : (liked
+        ? (isEnglish ? 'Liked — thank you' : '已点赞，感谢你的支持')
+        : (isEnglish ? 'Like this page' : '为这个主页点赞'));
+    button.setAttribute('aria-label', label);
+    button.setAttribute('title', label);
+  }
+
+  function applyLikedState() {
+    button.classList.toggle('is-liked', liked);
+    button.setAttribute('aria-pressed', String(liked));
+    button.disabled = liked;
+    setLabel();
+  }
+
+  function request(action) {
+    var controller = new AbortController();
+    var timeout = window.setTimeout(function () {
+      controller.abort();
+    }, 6000);
+
+    return fetch(counterUrl + '/' + action + counterPath, {
+      headers: { Accept: 'application/json' },
+      signal: controller.signal
+    }).then(function (response) {
+      if (action === 'get' && response.status === 404) return { value: 0 };
+      if (!response.ok) throw new Error('Like counter request failed');
+      return response.json();
+    }).finally(function () {
+      window.clearTimeout(timeout);
+    });
+  }
+
+  function showValue(value) {
+    count.textContent = new Intl.NumberFormat().format(value);
+  }
+
+  applyLikedState();
+  request('get').then(function (result) {
+    showValue(result.value);
+  }).catch(function () {
+    count.textContent = '—';
+  });
+
+  button.addEventListener('click', function () {
+    if (liked || pending) return;
+    pending = true;
+    button.classList.add('is-pending');
+    button.disabled = true;
+
+    request('hit').then(function (result) {
+      liked = true;
+      localStorage.setItem(storageKey, 'true');
+      showValue(result.value);
+      applyLikedState();
+    }).catch(function () {
+      button.disabled = false;
+    }).finally(function () {
+      pending = false;
+      button.classList.remove('is-pending');
+    });
+  });
+
+  window.addEventListener('languagechange', function (event) {
+    setLabel(event.detail.translations);
+  });
+})();
+
+(function () {
   var canvas = document.getElementById('bg');
   var ctx = canvas.getContext('2d');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
